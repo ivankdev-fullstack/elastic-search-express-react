@@ -17,10 +17,11 @@ export const App = () => {
 
   const sendSearchRequest = () => {
     const { type, mag, location, date_range, sort_option } = fields;
+    const apiURL = import.meta.env.VITE_API_URL;
 
     const results = {
       method: "GET",
-      url: "http://localhost:3333/results",
+      url: `${apiURL}/results`,
       params: {
         type,
         mag,
@@ -41,9 +42,7 @@ export const App = () => {
   };
 
   const disableButton = () => {
-    return Object.values(fields).some(
-      (v) => v === null || v === undefined || !v?.length
-    );
+    return Object.values(fields)?.some((v) => !v || (v && !v.length));
   };
 
   return (

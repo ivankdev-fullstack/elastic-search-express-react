@@ -9,7 +9,7 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 3333;
 
-app.use(cors());
+app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use("/ingest_data", earthquakesRoutes);
 
 app.get("/results", (req, res) => {
