@@ -41,10 +41,6 @@ export const App = () => {
       });
   };
 
-  const disableButton = () => {
-    return Object.values(fields)?.some((v) => !v || (v && !v.length));
-  };
-
   return (
     <div className="app">
       <nav>
@@ -144,9 +140,7 @@ export const App = () => {
               </select>
             </li>
             <li>
-              <button onClick={sendSearchRequest} disabled={disableButton()}>
-                Search
-              </button>
+              <button onClick={sendSearchRequest}>Search</button>
             </li>
           </ul>
         </div>
