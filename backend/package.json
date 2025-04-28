@@ -1,0 +1,30 @@
+{
+  "name": "season_2_repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "generate:api-key": "node src/utils/create-api-key.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "8.2.1",
+    "axios": "0.27.2",
+    "cors": "2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "4.18.1",
+    "log-timestamp": "0.3.0",
+    "nodemon": "2.0.19"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
